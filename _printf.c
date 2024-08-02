@@ -29,34 +29,13 @@ int _printf(const char *format, ...)
 					count += write(1, &c, 1);
 					break;
 				case 's':
-<<<<<<< HEAD
-    s = va_arg(args, char *);
-    if (s == NULL)
-    {
-        s = "(null)";
-    }
-    while (*s)
-    {
-        count += write(1, s, 1);
-        s++;
-    }
-    break;
-
-=======
-    case 's':
-    s = va_arg(args, char *);
-    if (s == NULL)
-    {
-        s = "(null)";
-    }
-    while (*s)
-    {
-        count += write(1, s, 1);
-        s++;
-    }
-    break;
-
->>>>>>> 4da0a9b060a8e1f94aaac0495b7587f2016d1438
+					s = va_arg(args, char *);
+					while (*s)
+					{
+						count += write(1, s, 1);
+						s++;
+					}
+					break;
 				case '%':
 					count += write(1, &format[i], 1);
 					break;
